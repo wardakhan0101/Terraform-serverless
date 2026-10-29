@@ -1,4 +1,4 @@
-# Marginalia | Book Review Platform
+# Book Review Platform
 
 A book discovery application built with React, Python and AWS. Authors add book metadata, readers leave ratings and optional reviews, and a public Discover page ranks books by their average rating. Terraform describes the infrastructure in reusable modules, with separate staging and production configurations.
 
@@ -150,9 +150,3 @@ Then choose an environment:
 ```
 
 The planning script checks the AWS identity, initializes and validates the selected root, and saves the plan under `.local/`. The provider and script are currently configured for the `poc-personal` profile, a specific account and `us-west-2`; adapt both deliberately before using another AWS account. Plans and state can contain sensitive information and should not be committed. The current local backend is intended for local work; shared environments need an appropriately secured remote state backend and locking.
-
-## Operational considerations
-
-The Terraform configuration includes ECS native canary settings, Lambda versions and aliases, dashboards, alarms, point-in-time recovery for DynamoDB, and failure destinations for review events. Container image references require actual published image digests before deployment; the local Docker build alone does not publish an image. The SNS topic has no email subscriber unless one is configured. API Gateway access logging also depends on an appropriate account-level CloudWatch role.
-
-Terraform validation and plans check configuration and proposed changes; they do not prove that networking, authorization, alarms, recovery or application behavior works in a live AWS environment. Pipeline automation is outside this repository's current implementation.
