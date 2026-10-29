@@ -1,0 +1,1 @@
+output "api" { value = { id = aws_api_gateway_rest_api.this.id, name = aws_api_gateway_rest_api.this.name, stage_name = aws_api_gateway_stage.this.stage_name, invoke_url = aws_api_gateway_stage.this.invoke_url } }

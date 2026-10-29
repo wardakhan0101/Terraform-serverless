@@ -1,0 +1,11 @@
+.git
+.agents
+.local
+.venv
+**/__pycache__
+**/node_modules
+**/.terraform
+**/*.tfstate*
+**/*.tfplan*
+frontend
+tests

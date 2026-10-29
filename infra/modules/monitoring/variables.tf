@@ -1,0 +1,9 @@
+variable "name" { type = string }
+variable "region" { type = string }
+variable "functions" { type = any }
+variable "data" { type = any }
+variable "api" { type = any }
+variable "alb" { type = any }
+variable "services" { type = any }
+variable "cluster_name" { type = string }
+variable "alerts_arn" { type = string }
